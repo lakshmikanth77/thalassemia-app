@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def train_model(data_path):
-    df = pd.read_csv("C:\\Users\\klkan\\Downloads\\thdata_final2.csv")
+    df = pd.read_csv("thdata_final2.csv")
     X = df.drop('Group', axis=1)
     y = df['Group']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
@@ -45,7 +45,7 @@ def run():
     
     # Button to make prediction
     if st.button('Predict Group'):
-        model = train_model("C:\\Users\\klkan\\Downloads\\thdata_final2.csv")
+        model = train_model("thdata_final2.csv")
         prediction = model.predict(data_df)
         prediction_proba = model.predict_proba(data_df)
         
